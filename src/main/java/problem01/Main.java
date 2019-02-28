@@ -3,6 +3,8 @@ package problem01;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.sun.xml.internal.bind.util.Which;
+
 
 public class Main {
 	
@@ -38,7 +40,68 @@ public class Main {
 		System.out.println("\n맞췄습니다. 총 실행 횟수는 " + count + "번 입니다.");
 	}
 	
+	
+	
+	
+	
 	public static boolean checkAnswer(int answer) {
-		return true;
+		
+		boolean checkResult = false;
+		Scanner scanner = new Scanner(System.in);
+			
+		
+			System.out.println(randomNumber);
+			while(answer <= 100) {
+				if(answer > randomNumber) {
+					System.out.print( "[" + min + "-" + answer + "] 사이의 값 입력:" );
+					answer = scanner.nextInt();
+					count++;
+					if(answer > randomNumber) {
+						System.out.print( "[" + min + "-" + answer + "] 사이의 값 입력:" );
+						answer = scanner.nextInt();
+						count++;
+					}else if(answer == randomNumber) {
+						scanner.close();
+						
+					}
+
+//					else if(answer < randomNumber) {
+//						System.out.print( "[" + min + "-" + (answer+randomNumber) + "] 사이의 값 입력:" );
+//						answer = scanner.nextInt();
+//						count++;
+//					}
+				}else if(answer < randomNumber) {
+					System.out.print( "[" + answer + "-" + (randomNumber+5) + "] 사이의 값 입력:" );
+					answer = scanner.nextInt();
+					count++;
+					if(answer < randomNumber) {
+						System.out.print( "[" + answer + "-" + (randomNumber+5) + "] 사이의 값 입력:" );
+						answer = scanner.nextInt();
+						count++;
+					}else if(answer == randomNumber) {
+						scanner.close();
+						
+					}
+					
+				}
+				checkResult = true;
+				break;
+			}
+//			while (scanner.hasNext()) {
+//				String string = (String) scanner.next();
+//				
+//			}
+			
+//			if(answer < randomNumber) {
+//				System.out.print( "[" + answer + "-" + randomNumber + "] 사이의 값 입력:" );
+//				answer = scanner.nextInt();
+//				count++;
+//			}
+//			break;
+//			for(int i=0; i<answer; i++) {
+////			System.out.println("sjkssj");
+//			}
+
+		return checkResult;
 	}
 }

@@ -4,13 +4,14 @@ public class MyStack {
 	
 	private String[] buffer;
 
-	public MyStack( int size ) {
+	public MyStack(int size) {
 	}
 	
 	public void push(String item) {
 	}
 
 	public String pop() {
+		System.out.println();
 		return null;
 	}
 
